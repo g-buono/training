@@ -1,0 +1,1 @@
+js/clientlib-component2.js

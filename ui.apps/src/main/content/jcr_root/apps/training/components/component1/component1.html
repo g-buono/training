@@ -1,6 +1,6 @@
-<sly data-sly-test="${wcmmode.edit && !properties}">
+<sly data-sly-test="${wcmmode.edit && !properties.textfield}">
 	<div data-emptytext="Component 1" class="cq-placeholder"></div>
 </sly> 
-<sly data-sly-test="${properties}">
+<sly data-sly-test="${properties.textfield}">
 	<p>Textfield value: ${properties.textfield}</p>
 </sly>
