@@ -4,6 +4,6 @@
 	xmlns:cq="http://www.day.com/jcr/cq/1.0"
 	xmlns:jcr="http://www.jcp.org/jcr/1.0"
 	jcr:primaryType="cq:Component"
-	jcr:title="Training - Page 2"
+	jcr:title="Training - Content Page"
 	sling:resourceSuperType="training/structure/page"
 	componentGroup=".hidden" />

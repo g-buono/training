@@ -3,12 +3,11 @@
 	xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
 	xmlns:cq="http://www.day.com/jcr/cq/1.0"
 	xmlns:jcr="http://www.jcp.org/jcr/1.0"
-	jcr:title="Training - Template 1"
+	jcr:title="Training - Content Page"
 	jcr:primaryType="cq:Template"
-	allowedPaths="[/content]"
-	allowedChildren="[/apps/training/templates/template2]"
+	allowedPaths="[/content/(.*)]"
 	ranking="{Long}100">
 	<jcr:content
 		jcr:primaryType="cq:PageContent"
-		sling:resourceType="training/structure/page1" />
+		sling:resourceType="training/structure/page-content" />
 </jcr:root>
