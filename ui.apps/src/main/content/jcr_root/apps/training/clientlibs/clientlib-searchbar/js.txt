@@ -1,1 +1,1 @@
-js/searchbar.js
+js/clientlib-searchbar.js

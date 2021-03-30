@@ -2,7 +2,10 @@
 	<div data-emptytext="Search Bar" class="cq-placeholder"></div>
 </sly> 
 <sly data-sly-test="${properties.textfield}">
-	This is my search bar component
+	<form id="search-form" data-pages-location="${properties.pagesLocation}" data-assets-location="${properties.assetsLocation}"> 
+		<input type="search" id="search-query" placeholder="Search...">
+		<button type="submit">${properties.searchButtonLabel}</button>
+	</form> 
 	
 	<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
 	     data-sly-call="${clientlib.js @ categories='training.searchbar'}" />
