@@ -1,11 +1,13 @@
-<sly data-sly-test="${wcmmode.edit && !properties.textfield}">
+<sly data-sly-test="${wcmmode.edit && !properties.searchButtonLabel}">
 	<div data-emptytext="Search Bar" class="cq-placeholder"></div>
 </sly> 
-<sly data-sly-test="${properties.textfield}">
-	<form id="search-form" data-pages-location="${properties.pagesLocation}" data-assets-location="${properties.assetsLocation}"> 
-		<input type="search" id="search-query" placeholder="Search...">
+<sly data-sly-test="${properties.searchButtonLabel}">
+	<form id="search-form" data-no-results-message="${properties.noResultsMessage}" 
+		  data-pages-location="${properties.pagesLocation}" data-assets-location="${properties.assetsLocation}"> 
+		<input type="search" id="search-query" placeholder="${properties.searchBarPlaceholderText}">
 		<button type="submit">${properties.searchButtonLabel}</button>
-	</form> 
+	</form>
+	<div id="search-results"></div> 
 	
 	<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
 	     data-sly-call="${clientlib.js @ categories='training.searchbar'}" />

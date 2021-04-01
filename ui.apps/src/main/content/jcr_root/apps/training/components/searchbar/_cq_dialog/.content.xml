@@ -25,15 +25,30 @@
 								fieldLabel="Search button label"
 								name="./searchButtonLabel"
 								required="{Boolean}true" />
+							<searchBarPlaceholderText
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Searchbar placeholder text"
+								name="./searchBarPlaceholderText"
+								required="{Boolean}true" />
+							<noResultsMessage
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="No results message"
+								fieldDescription="This message will be returned to the user if no search results have been found"
+								name="./noResultsMessage"
+								required="{Boolean}true" />
 							<pagesLocation
 								jcr:primaryType="nt:unstructured"
 								sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
 								fieldLabel="Pages location"
+								fieldDescription="Each page under this path will be scanned by the search engine"
 								name="./pagesLocation"
 								required="{Boolean}true" />
 							<assetsLocation
 								jcr:primaryType="nt:unstructured"
 								sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+								fieldDescription="Each asset under this path will be scanned by the search engine"
 								fieldLabel="Assets location"
 								name="./assetsLocation"
 								required="{Boolean}true" />

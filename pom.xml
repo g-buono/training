@@ -591,6 +591,11 @@
                 <version>1.0.1</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+			    <groupId>org.json</groupId>
+			    <artifactId>org.json</artifactId>
+			    <version>chargebee-1.0</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 

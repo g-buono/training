@@ -1,39 +1,40 @@
-let searchForm = document.querySelector('#search-form');
+const searchForm = document.querySelector("#search-form");
 
-searchForm.addEventListener('submit', (event) => {
-	event.preventDefault();
+searchForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    fetch("/libs/granite/csrf/token.json", {method: "GET"})
+	.then(response => response.json())
+	.then(data => {
+        const params = {
+            searchQuery: document.querySelector("#search-query").value,
+            pagesLocation: searchForm.getAttribute("data-pages-location"),
+            assetsLocation: searchForm.getAttribute("data-assets-location")
+        };
+		
+		const headers = {
+            "Content-Type": "application/json",
+            "CSRF-Token": data.token,
+        }
+		
+        return fetch("/bin/search?" + new URLSearchParams(Object.entries(params)), {method: "POST", headers: headers});
+    })
+	.then(response => response.json())
+	.then(pagesList => {
+        if (!pagesList.length) {
+			document.querySelector('#search-results').innerText = searchForm.getAttribute("data-no-results-message");
+		}
+		else {
+			const searchResults = document.querySelector('#search-results');
 			
-	fetch('/libs/granite/csrf/token.json', 
-		 {
-			method: 'GET',
-		 })
-		 .then(response => response.json())
-		 .then(data => {
-			const params = {
-			    searchQuery: document.querySelector('#search-query').value,
-			    pagesLocation: searchForm.getAttribute('data-pages-location'),
-			    assetsLocation: searchForm.getAttribute('data-assets-location')
-			};
-	
-			const urlParams = new URLSearchParams(Object.entries(params));
-			
-		 	fetch('/bin/search?' + urlParams, 
-				 {
-					method: 'POST',
-				    headers: {
-				        'Content-Type': 'application/json',
-						'CSRF-Token': data.token
-				    }
-				 })
-				 .then(response => response.json())
-				 .then(data => {
-				 	console.log('Success:', data);
-				 })
-				 .catch(error => {
-				 	console.error('Error:', error);
-				 });
-		 })
-		 .catch(error => {
-		 	console.error('Error:', error);
-		 });
+			for (let page of pagesList) {
+				const anchor = document.createElement('a');
+				const newLine = document.createElement('br');
+				anchor.innerText = page.title;
+				anchor.setAttribute('href', page.url + '.html');
+				searchResults.appendChild(anchor);
+				searchResults.appendChild(newLine);
+			}
+		}
+    });
 });
