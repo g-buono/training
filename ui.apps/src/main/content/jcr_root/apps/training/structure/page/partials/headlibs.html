@@ -1,1 +1,7 @@
-<sly data-sly-include="/libs/wcm/core/components/init/init.jsp"/>
+<sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+<sly data-sly-use.vendorClientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${vendorClientlib.css @ categories='training.vendor'}" />
+
+<sly data-sly-use.baseClientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${baseClientlib.css @ categories='training.base'}" />

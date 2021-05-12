@@ -1,1 +1,0 @@
-console.log("You are in component 2 clientlib");

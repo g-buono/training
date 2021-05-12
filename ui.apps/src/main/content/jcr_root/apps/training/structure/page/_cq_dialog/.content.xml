@@ -38,10 +38,6 @@
 					<socialmedia
 						jcr:primaryType="nt:unstructured"
 						sling:hideResource="{Boolean}true" />
-					<tab1
-						jcr:primaryType="nt:unstructured"
-						sling:resourceType="granite/ui/components/coral/foundation/include"
-						path="training/structure/page/cq:dialog/tab1" />
 				</items>
 			</tabs>
 		</items>
