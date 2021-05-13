@@ -1,0 +1,19 @@
+<sly data-sly-test="${wcmmode.edit && !properties}">
+	<div data-emptytext="Banner" class="cq-placeholder"></div>
+</sly> 
+<sly data-sly-test="${properties}">
+	<sly data-sly-use.multifield="${currentNode.path}/multifield" />
+
+	<div class="banner header-text">
+      <div class="owl-banner owl-carousel">
+      	<sly data-sly-list="${multifield.children}">
+      		<div class="banner-item-0${itemList.count}">
+	          <div class="text-content"> 
+	            <h4 data-sly-element="${item.titleHeading}">${item.title}</h4>
+	            <h2>${item.subtitle}</h2>
+	          </div>
+	        </div>
+      	</sly>
+      </div>
+    </div>
+</sly>
