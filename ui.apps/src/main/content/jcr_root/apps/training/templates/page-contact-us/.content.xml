@@ -3,13 +3,13 @@
 	xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
 	xmlns:cq="http://www.day.com/jcr/cq/1.0"
 	xmlns:jcr="http://www.jcp.org/jcr/1.0"
-	jcr:title="Training - Language Page"
+	jcr:title="Training - Contact Us Page"
 	jcr:primaryType="cq:Template"
 	allowedPaths="[/content(.*)]"
-	allowedParents="[/apps/training/templates/page-root]"
-	allowedChildren="[/apps/training/templates/page-about-us,/apps/training/templates/page-contact-us,/apps/training/templates/page-products]"
+	allowedParents="[/apps/training/templates/page-language]"
+	allowedChildren=""
 	ranking="{Long}100">
 	<jcr:content
 		jcr:primaryType="cq:PageContent"
-		sling:resourceType="training/structure/page-language" />
+		sling:resourceType="training/structure/page-contact-us" />
 </jcr:root>
