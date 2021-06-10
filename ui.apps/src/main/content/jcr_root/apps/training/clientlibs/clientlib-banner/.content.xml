@@ -2,6 +2,6 @@
 <jcr:root
 	xmlns:cq="http://www.day.com/jcr/cq/1.0"
 	xmlns:jcr="http://www.jcp.org/jcr/1.0"
-	jcr:primaryType="cq:Component"
-	jcr:title="Banner"
-	componentGroup="Training" />
+	jcr:primaryType="cq:ClientLibraryFolder"
+	categories="[training.banner]"
+	allowProxy="{Boolean}true" />
