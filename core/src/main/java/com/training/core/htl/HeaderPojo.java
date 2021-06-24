@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.day.cq.wcm.api.Page;
+import com.training.core.config.OsgiConfig;
 
 public class HeaderPojo extends WCMUsePojo {
 	
@@ -13,6 +14,7 @@ public class HeaderPojo extends WCMUsePojo {
 
 	@Override
 	public void activate() throws Exception {
+		OsgiConfig osgiConfig = getSlingScriptHelper().getService(OsgiConfig.class); 
 		menuItems = new LinkedList<>();
 		Page currentPage = getCurrentPage();
 		

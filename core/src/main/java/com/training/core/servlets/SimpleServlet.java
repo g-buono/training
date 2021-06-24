@@ -11,6 +11,9 @@ import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.ServletResolverConstants;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import com.training.core.config.OsgiConfig;
 
 @Component(service = Servlet.class, property = {
 		   ServletResolverConstants.SLING_SERVLET_METHODS + "=" + HttpConstants.METHOD_GET,
@@ -20,6 +23,9 @@ import org.osgi.service.component.annotations.Component;
 public class SimpleServlet extends SlingAllMethodsServlet {
 	
 	private static final long serialVersionUID = 4658459046306824894L;
+	
+	@Reference
+	transient OsgiConfig osgiConfig;
 
 	@Override
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response) throws ServletException, IOException {
